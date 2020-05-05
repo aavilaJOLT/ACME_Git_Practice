@@ -1,0 +1,52 @@
+{
+    "Global": {
+		"Orchestrator_Queue": "GitPractice_Queue",
+        "Timeout_Short": "5000",
+        "Timeout_Long": "60000",
+        "Process_Name": "Name",
+        "Screenshots_Folder": "Path_To_Folder",
+        "Username": "{Username}",
+        "Login_Username": "UsernameAPP",
+        "Login_Password": "passwordAPP_NOPROTECTION",
+        "LogMessage_Start": "Starting Process",
+		"LogMessage_Finish": "Finishing Process",
+		"LogMessage_GetTransactionData": "Processing Transaction Number: ",
+		"LogMessage_GetTransactionError": "Error getting transaction data for Transaction Number: ",
+		"LogMessage_Success": "Transaction Successful",
+		"Retry": "Times_to_Retry"
+    },
+    "Email_Sender": {
+    	"To": "Receiver_Email",
+		"Cc": "Email_Directions",
+    	"Subject": "Mail_Subject",
+    	"Port": 587,
+    	"Server": "Server_to_Use",
+    	"Asset_Credentials": "Name_of_the_Asset_in_Orchestrator_that_Contains_credentials_of_Email_Sender"
+    },
+    "Email_Extractor": {
+		"AccountName": "Name_of_Account_to_Get_Mails",
+		"MailFolder": "Folder_to_Get_Mails",
+		"Filter": "Filter_to_Search",
+		"AmountOfEmails": "Number_of_Emails_to_Take",
+		"Port": 587,
+		"Server": "Server_to_Use",
+		"CredentialsAsset": "Name_of_the_Asset_that_have_the_Credentials"
+	},
+	"Assets": {
+		"AssetNameUiPath": "AssetNameInOrchestrator",
+		"AssetNameUiPath1": "AssetNameInOrchestrator1"
+    },
+    "SAP": {
+		"SAP_Link": "SAP_web_path",
+		"SAP_Credentials_in_Orchestrator": "Name_of_Credential_in_Orchestrator_For_SAP",
+		"SAP_User": "User",
+		"SAP_Password": "Password-NoProtection"
+    },
+    "Excel": {
+		"Excel_Path": "File_Location",
+		"Excel_Name": "File_Name",
+		"Sheet": "Sheet_Name",
+		"Range": "Range_to_Get_Data",
+		"Cell": "Cell"
+    }
+}
