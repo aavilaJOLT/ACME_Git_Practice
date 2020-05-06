@@ -56,6 +56,8 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Creating_Excel" sap:VirtualizedContainerService.HintSize="376,517" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -76,7 +78,7 @@
               <OutArgument x:TypeArguments="x:Object">[row("CAT")]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[row("Date").ToString.Substring(0,4)+row("WIID").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[row("Date").ToString.Substring(0,4)+"-"+row("WIID").ToString]</InArgument>
             </Assign.Value>
           </Assign>
         </ActivityAction>
