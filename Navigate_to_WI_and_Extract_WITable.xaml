@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>820,2345</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>820,1609</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Navigate_to_WI_and_Extract_WITable_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -35,7 +35,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -52,6 +52,7 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Navigate_to_WI_and_Extract_WITable" sap:VirtualizedContainerService.HintSize="618,1544" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -157,15 +158,13 @@
                 <InArgument x:TypeArguments="x:Int32">[Int32.Parse(Row_Month.Groups(1).ToString)]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[Row_Year&gt;=2018 And Row_Month_Value&lt;06]" sap:VirtualizedContainerService.HintSize="484,282" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[Not(Row_Year&lt;=2018 And Row_Month_Value&gt;06)]" sap:VirtualizedContainerService.HintSize="484,282" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="238,134" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="ImportRow">
                   <InvokeMethod.TargetObject>
                     <InArgument x:TypeArguments="sd:DataTable">[out_Filtered_DT]</InArgument>
                   </InvokeMethod.TargetObject>
-                  <InArgument x:TypeArguments="sd:DataRow">
-                    <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="row" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="sd:DataRow">[row]</InArgument>
                 </InvokeMethod>
               </If.Then>
             </If>
